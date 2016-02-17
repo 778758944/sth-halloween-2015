@@ -1,8 +1,8 @@
 <?php
 
-define('DRUPAL_ROOT', '/var/www/sgh');
+define('DRUPAL_ROOT', '/www/sgh');
 
-chdir('/var/www/sgh');
+chdir('/www/sgh');
 require_once './includes/bootstrap.inc';
 drupal_bootstrap(DRUPAL_BOOTSTRAP_FULL);
 
