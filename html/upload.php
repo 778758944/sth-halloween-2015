@@ -10,12 +10,12 @@ $openid=$_POST['openid'];
 $droid=$_POST['server_id'];
 if($droid)
 {
-    $url='http://mp.socialvalue.cn/wechat/getticket';
-    $post_data=array('action'=>'get_accesstoken');
-    $back=httpPost($post_data,$url);
-    //echo 'aaaa';
-    $back=json_decode($back,true);
-    $access_token=$back['access_token'];
+    $url='http://wechat.xingwentao.top/accessToken';
+    // $post_data=array('action'=>'get_accesstoken');
+    // $back=httpPost($post_data,$url);
+    // //echo 'aaaa';
+    // $back=json_decode($back,true);
+    $access_token=httpGet($url);
     if(!$access_token)
     {
         $return=array('status'=>'fail','msg'=>'wrong access_token');
@@ -31,7 +31,7 @@ if($droid)
     }
     $data_name=$openid.'.png';
     $file = file_save_data($back,'public://editimage/' .$data_name,FILE_EXISTS_REPLACE);
-    $file_url='http://mp.socialvalue.cn/sites/default/files/editimage/'.$openid.'.png';
+    $file_url='http://sgh.xingwentao.top/sites/default/files/editimage/'.$openid.'.png';
     if ($file)
     {
         $return=array('status'=>'success','url'=>$file_url);
@@ -48,11 +48,11 @@ $file=$_FILES['pic'];
 // print_r($_POST);
 // print_r($GLOBALS['HTTP_RAW_POST_DATA']);
 //echo $openid;
-$flag=move_uploaded_file($_FILES["pic"]["tmp_name"], "/var/www/sgh/sites/default/files/editimage/" .$openid.".png");
+$flag=move_uploaded_file($_FILES["pic"]["tmp_name"], "/www/sgh-halloween-2015/sites/default/files/editimage/" .$openid.".png");
 if ($flag)
 {    
     $timestamp=(string)time();
-	$file_url='http://mp.socialvalue.cn/sites/default/files/editimage/'.$openid.'.png';
+	$file_url='http://sgh.xingwentao.top/sites/default/files/editimage/'.$openid.'.png';
 	$return=array('status'=>'success','url'=>$file_url);
 	exit(json_encode($return));
 }
