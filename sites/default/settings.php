@@ -219,9 +219,9 @@ $databases = array (
     array (
       'database' => 'sgh',
       'username' => 'root',
-      'password' => '',
+      'password' => '123321qq',
       'host' => 'localhost',
-      'port' => '',
+      'port' => '3306',
       'driver' => 'mysql',
       'prefix' => '',
     ),
