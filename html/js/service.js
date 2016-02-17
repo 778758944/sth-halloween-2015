@@ -148,7 +148,7 @@ sghService.factory("Http",function($location,$timeout){
 		];
 
 
-	  $.post('http://sgh.xingwentao.top/jssdk', {
+	  $.post('http://wechat.xingwentao.top/jssdk', {
 	    url: location.href.split('#')[0]
 	  }).done(function(data) {
 	  	var conf=data;
