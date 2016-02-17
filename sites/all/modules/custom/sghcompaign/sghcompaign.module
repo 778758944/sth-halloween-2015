@@ -1,0 +1,91 @@
+<?php
+function sghcompaign_menu()
+{
+	$items['admin/config/services/wechat-setting']=array(
+	'title' =>        '设置',
+    'description'=>   '设置相关微信服务参数',	
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('oather_form'),
+    'access arguments' => array('administer site configuration'),
+    'type'=>          MENU_NORMAL_ITEM
+    );
+    $items['compaign/imageupload']=array(
+    'page callback' => 'get_image_upload',
+    'access arguments' => array('access content'),
+    'type'=> MENU_CALLBACK,
+    'file'=>'sghcompaign.compaign.inc'
+    );
+    $items['compaign/infoupload']=array(
+     'page callback' => 'get_info_upload',
+    'access arguments' => array('access content'),
+    'type'=> MENU_CALLBACK,
+    'file'=>'sghcompaign.compaign.inc'
+    );
+    $items['wechat/getticket']=array(
+    'page callback' => 'get_wechat_ticket',
+    'access arguments' => array('access content'),
+    'type'=> MENU_CALLBACK,
+    'file'=>'sghcompaign.wechat.inc'
+    );
+    $items['wechat/author']=array(
+    'page callback' => 'get_user_info',
+    'access arguments' => array('access content'),
+    'type'=> MENU_CALLBACK,
+    'file'=>'sghcompaign.wechat.inc'
+    );
+    $items['wechat/reset']=array(
+    'page callback' => 'reset_ticket_api',
+    'access arguments' => array('access content'),
+    'type'=> MENU_CALLBACK,
+    'file'=>'sghcompaign.wechat.inc'
+    );
+    return $items;
+}
+function oather_form()
+{   
+  drupal_set_message('load success');
+  $form['appid']=array(
+	'#title' =>'微信服务appID',
+	'#type'  =>'textfield',
+	'#required' =>TRUE,
+	'#default_value'=>variable_get('wechatappid', '')
+	);
+  $form['appsecret']=array(
+	'#title' =>'微信服务appSECRET',
+	'#type'  =>'textfield',
+	'#required' =>TRUE,
+	'#default_value'=>variable_get('wechatappsecret', '')
+	);
+	$form['submit'] = array(
+	'#value' => '提交',
+	'#type' => 'submit',
+	'#required' => TRUE,
+	'#submit' =>array('oather_form_submit'),
+	'#validate' => array('oather_form_validate')
+	);
+	return $form;
+}
+function oather_form_submit(&$form,&$form_state)
+{
+	variable_set('wechatappid', $form_state['values']['appid']);
+	variable_set('wechatappsecret',$form_state['values']['appsecret']);
+	//drupal_set_message('信息存入成功');
+    //drupal_set_message(variable_get('wechatappid', ''));
+    //drupal_set_message(variable_get('wechatappsecret', ''));
+
+}
+function oather_form_validate($form,$form_state)
+{
+    if(drupal_strlen($form_state['values']['appid'])<5)
+    {
+    	form_set_error('APPid长度不合法');
+    }
+    if(drupal_strlen($form_state['values']['appsecret'])<10)
+    {
+    	form_set_error('APPsecret长度不合法');
+    }
+}
+
+
+
+

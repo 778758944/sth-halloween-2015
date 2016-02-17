@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+	<div id="contentHolder">
+		<video id="video" width="320" height="320" autoplay></video>
+		<button id="snap" style="">拍照</button>
+		<canvas style="" id="cvs" width="320" height="320"></canvas>
+	</div>
+	<script>
+	window.addEventListener("DOMContentLoaded",function(){
+		var cvs=document.getElementById("cvs"),
+		    ctx=cvs.getContext("2d"),
+		    video=document.getElementById("video"),
+		    videoObj={"video":true};
+		var errBack=function(error){
+		    	alert("video capture error:");
+		    };
+	    var container=document.getElementById("contentHolder");
+
+		    // alert(navigator.getUserMedia);
+
+		if(navigator.getUserMedia){
+			//alert("ll");
+			navigator.getUserMedia("video",function(stream){
+				// alert(typeof stream);
+				// alert(window.URL);
+				// for(i in stream){
+				// 	alert(i+": "+stream[i]);
+				// }
+				//alert(window.webkitURL.createObjectURL(stream));
+				// alert(stream["videoTracks"]);
+				// for(k in stream["videoTracks"]){
+				// 	alert(k+": "+stream["videoTracks"][k]);
+				// }
+				video.src=window.webkitURL.createObjectURL(stream);
+				video.play();
+			},function(){
+				//alert("lll");
+			});
+		}
+		 if(navigator.webkitGetUserMedia){
+			//alert("tp");
+			navigator.webkitGetUserMedia(videoObj,function(stream){
+				//alert("dd");
+				video.src=window.webkitURL.createObjectURL(stream);
+				//alert(window.webkitURL.createObjectURL(stream));
+				video.play();
+			},errBack);
+		}
+
+		var snpa=document.getElementById("snap");
+		snap.onclick=function(){
+			ctx.drawImage(video,0,0,320,320);
+			var url=cvs.toDataURL();
+			var img=document.createElement("img");
+			img.width=320;
+			img.height=320;
+			img.src=url;
+			var data=url.substr(22);
+			$.post("http://sgh.clients.inzen.com.cn/compaign/imageupload",{"data":data,"openid":"o4cOIjlucSdsNKQFs5JCs7Isbj9k"},function(data){
+				alert(data);
+			});
+
+			// container.appendChild(img);
+
+		}
+
+		// var interval=setInterval(CatchCode,300);
+
+
+
+
+	})
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
