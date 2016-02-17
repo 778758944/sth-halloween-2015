@@ -910,7 +910,7 @@ app.directive("cs",function(View,$location,$timeout){
 							// 	},1);
 							// }
 							var data=url.substr(22);
-							$.post("http://mp.socialvalue.cn/compaign/imageupload",{
+							$.post("http://sgh.xingwentao.top/compaign/imageupload",{
 								data:data,
 								openid:use,
 								starty:y_t,
@@ -933,7 +933,7 @@ app.directive("cs",function(View,$location,$timeout){
 
 								// wx.onMenuShareTimeline({
 						  //   		title:stext,
-						  //   		link:"http://mp.socialvalue.cn/wechat/author",
+						  //   		link:"http://sgh.xingwentao.top/wechat/author",
 						  //   		imgUrl:imgurl,
 						  //   		success:function(){
 						  //   			$timeout(function(){
@@ -949,7 +949,7 @@ app.directive("cs",function(View,$location,$timeout){
                                 im.onload=function(){
 	                            	wx.onMenuShareAppMessage({
 									    title: shareobj.text, // 分享标题
-									    link: 'http://mp.socialvalue.cn/wechat/author', // 分享链接
+									    link: 'http://sgh.xingwentao.top/wechat/author', // 分享链接
 									    imgUrl: shareobj.url, // 分享图标
 									    success: function () { 
 									        $timeout(function(){
@@ -966,7 +966,7 @@ app.directive("cs",function(View,$location,$timeout){
 								// $timeout(function(){
 									wx.onMenuShareTimeline({
 							    		title:shareobj.text,
-							    		link:"http://mp.socialvalue.cn/wechat/author",
+							    		link:"http://sgh.xingwentao.top/wechat/author",
 							    		// imgUrl:shareobj.
 							    		imgUrl:shareobj.url,
 							    		success:function(){
@@ -991,7 +991,7 @@ app.directive("cs",function(View,$location,$timeout){
                                 im.src=shareobj.url;
 						  //   	wx.onMenuShareAppMessage({
 								//     title: stext, // 分享标题
-								//     link: 'http://mp.socialvalue.cn/wechat/author', // 分享链接
+								//     link: 'http://sgh.xingwentao.top/wechat/author', // 分享链接
 								//     imgUrl: imgurl, // 分享图标
 								//     success: function () { 
 								//         $timeout(function(){
@@ -1007,7 +1007,7 @@ app.directive("cs",function(View,$location,$timeout){
 								// // $timeout(function(){
 								// 	wx.onMenuShareTimeline({
 							 //    		title:stext,
-							 //    		link:"http://mp.socialvalue.cn/wechat/author",
+							 //    		link:"http://sgh.xingwentao.top/wechat/author",
 							 //    		imgUrl:imgurl,
 							 //    		success:function(){
 							 //    			$timeout(function(){
@@ -1022,7 +1022,7 @@ app.directive("cs",function(View,$location,$timeout){
 
 								// wx.onMenuShareTimeline({
 						  //   		title:stext,
-						  //   		link:"http://mp.socialvalue.cn/wechat/author",
+						  //   		link:"http://sgh.xingwentao.top/wechat/author",
 						  //   		imgUrl:imgurl,
 						  //   		success:function(){
 						  //   			$timeout(function(){
@@ -1161,7 +1161,7 @@ app.directive("fileup",function($timeout,$location){
 
 				setTimeout(function(){
 					$.ajax({
-						url:"http://mp.socialvalue.cn/html/upload.php",
+						url:"http://sgh.xingwentao.top/html/upload.php",
 						type:"POST",
 						data:new FormData(form),
 						contentType:false,
@@ -1198,7 +1198,7 @@ app.directive("sub",function(){
 				};
 				var reg=/^1[3|4|5|8][0-9]\d{4,8}$/;
 				if(reg.test(user_info.tel)){
-					$.post("http://mp.socialvalue.cn/compaign/infoupload",user_info,function(data){
+					$.post("http://sgh.xingwentao.top/compaign/infoupload",user_info,function(data){
 						$(".lucky").css("display","none");
 						$(".formm").css("display","none");
 						$("#success_info").css("display","block");
@@ -1234,7 +1234,7 @@ app.directive("anfile",function($location,$timeout){
 						    success: function (res) {
 						        var serverId = res.serverId;
 						        // alert(serverId);
-						        $.post("http://mp.socialvalue.cn/html/upload.php",{
+						        $.post("http://sgh.xingwentao.top/html/upload.php",{
 						        	server_id:serverId,
 						        	openid:use
 						        },function(data){

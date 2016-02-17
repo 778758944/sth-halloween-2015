@@ -148,15 +148,15 @@ sghService.factory("Http",function($location,$timeout){
 		];
 
 
-	  $.post('http://mp.socialvalue.cn/wechat/getticket', {
+	  $.post('http://sgh.xingwentao.top/jssdk', {
 	    url: location.href.split('#')[0]
 	  }).done(function(data) {
-	  	var conf=JSON.parse(data);
+	  	var conf=data;
 	  		wx.config({
-		      debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-		      appId: conf.appid, // 必填，公众号的唯一标识
+		      debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+		      appId: conf.appId, // 必填，公众号的唯一标识
 		      timestamp: conf.timestamp, // 必填，生成签名的时间戳
-		      nonceStr: conf.noncestr, // 必填，生成签名的随机串
+		      nonceStr: conf.nonceStr, // 必填，生成签名的随机串
 		      signature: conf.signature,// 必填，签名，见附录1
 		      jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage',"chooseImage","uploadImage"] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
 		    });
@@ -166,8 +166,8 @@ sghService.factory("Http",function($location,$timeout){
 
 		    	wx.onMenuShareTimeline({
 		    		title:"一个万圣节换装派对，萌翻整个朋友圈",
-		    		link:"http://mp.socialvalue.cn/wechat/author",
-		    		imgUrl:"http://mp.socialvalue.cn/html/file/genal/share.jpg",
+		    		link:"http://sgh.xingwentao.top/wechat/author",
+		    		imgUrl:"http://sgh.xingwentao.top/html/file/genal/share.jpg",
 		    		success:function(){
 		    			$timeout(function(){
 		    				// $location.path("/step8");
@@ -180,8 +180,8 @@ sghService.factory("Http",function($location,$timeout){
 
 		    	wx.onMenuShareAppMessage({
 				    title: '一个万圣节换装派对，萌翻整个朋友圈', // 分享标题
-				    link: 'http://mp.socialvalue.cn/wechat/author', // 分享链接
-				    imgUrl: 'http://mp.socialvalue.cn/html/file/Step3/genal/share.jpg', // 分享图标
+				    link: 'http://sgh.xingwentao.top/wechat/author', // 分享链接
+				    imgUrl: 'http://sgh.xingwentao.top/html/file/Step3/genal/share.jpg', // 分享图标
 				    success: function () { 
 				        $timeout(function(){
 		    				// $location.path("/step8");
@@ -201,7 +201,7 @@ sghService.factory("Http",function($location,$timeout){
 				bgm.load();
 		    });
 	  });
-		// $.post("http://mp.socialvalue.cn/wechat/getticket",function(data){
+		// $.post("http://sgh.xingwentao.top/wechat/getticket",function(data){
 		// 	console.log(data);
 		// 	var conf=JSON.parse(data);
 
