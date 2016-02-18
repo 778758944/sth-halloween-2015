@@ -24,7 +24,7 @@ function save_to_file($image){
 	$return_data=fread($fp,filesize($img_path1));
 	// echo $return_data;
 	fclose($fp);
-	$arr=array('url'=>$img_path2,'data'=>$return_data);
+	$arr=array('data'=>$return_data);
 	exit(json_decode($arr));
 }
 
