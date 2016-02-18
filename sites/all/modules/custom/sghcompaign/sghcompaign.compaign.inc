@@ -69,7 +69,7 @@ function get_image_upload()
     {
         $fileobj=unserialize($filestr);
         $fileobjshare=unserialize($fileshare);
-        <!-- file_delete($fileobj,true); -->
+        file_delete($fileobj,true);
         @file_delete($fileobjshare,true);
     }
     $timestring=(string)time();
