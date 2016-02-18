@@ -21,7 +21,7 @@ $img_path1='./html/images/aaa.txt';
 // }
 function save_to_file(){
 
-	$fp=fopen($img_path1,"r");
+	$fp=fopen('./html/images/aaa.txt',"r");
 	$return_data=fread($fp,filesize($img_path1));
 	// echo $return_data;
 	fclose($fp);
