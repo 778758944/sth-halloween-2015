@@ -910,7 +910,7 @@ app.directive("cs",function(View,$location,$timeout){
 							// 	},1);
 							// }
 							var data=url.substr(22);
-							$.post("http://sgh.xingwentao.top/compaign/imageupload",{
+							$.post("http://sgh.xingwentao.top/html/upload2.php",{
 								data:data,
 								openid:use,
 								starty:y_t,
@@ -919,7 +919,7 @@ app.directive("cs",function(View,$location,$timeout){
 								console.log(data);
 								
 								imgurl=JSON.parse(data).url;
-								shareobj.url=JSON.parse(data).shareurl;
+								shareobj.url=JSON.parse(data).url;
 								// console.log(shareobj.imgUrl);
 								// $(".hcing").css("display","none");
 								// if(!View.save){
