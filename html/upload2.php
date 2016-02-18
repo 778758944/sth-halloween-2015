@@ -22,13 +22,13 @@ function save_to_file($image){
 
 	$fp=fopen($img_path1,"r");
 	$return_data=fread($fp,filesize($img_path1));
-	echo $return_data;
+	// echo $return_data;
 	fclose($fp);
-	$arr=array("url"=>$img_path2,"data"=>$return_data);
+	$arr=array('url'=>$img_path2,'data'=>$return_data);
 	exit(json_decode($arr));
 }
 
-// convert_data($data);
+convert_data($data);
 
 // $arr=array("url"=>$img_path2);
 
