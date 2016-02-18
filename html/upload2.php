@@ -22,6 +22,8 @@ function save_to_file($image){
 	fclose($fp);
 }
 
+convert_data($data);
+
 $arr=array("url"=>$img_path2);
 
 exit(json_encode($arr));
