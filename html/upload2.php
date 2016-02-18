@@ -10,7 +10,7 @@ $filename=dirname(__FILE__);
 chdir('/www/sgh');
 $imgname=date("Y-m-d-H-i-s").".png";
 
-$img_path1="images/".$imgname;
+$img_path1="html/images/".$imgname;
 $img_path2="/html/images/".$imgname;
 
 
