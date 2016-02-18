@@ -916,6 +916,7 @@ app.directive("cs",function(View,$location,$timeout){
 								starty:y_t,
 								width:width
 							},function(data){
+								console.log(data);
 								
 								imgurl=JSON.parse(data).url;
 								shareobj.url=JSON.parse(data).shareurl;
@@ -1160,7 +1161,7 @@ app.directive("fileup",function($timeout,$location){
 				// console.dir($("#user_img"));
 
 				setTimeout(function(){
-					$.ajax({
+					$.ajax({:
 						url:"http://sgh.xingwentao.top/html/upload.php",
 						type:"POST",
 						data:new FormData(form),
