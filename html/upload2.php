@@ -8,7 +8,7 @@
 $data=$_POST["data"];
 $filename=dirname(__FILE__);
 chdir('/www/sgh');
-$imgname=date("Y-m-d-H-i-s").".png";
+$imgname="aaa".".png";
 
 $img_path1="html/images/".$imgname;
 $img_path2="/html/images/".$imgname;
