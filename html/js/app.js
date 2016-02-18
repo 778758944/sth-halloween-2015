@@ -1234,7 +1234,7 @@ app.directive("anfile",function($location,$timeout){
 						    success: function (res) {
 						        var serverId = res.serverId;
 						        console.log(use);
-						        console.log("get IMAGE");
+						        alert("get IMAGE");
 						        $.post("http://sgh.xingwentao.top/html/upload.php",{
 						        	server_id:serverId,
 						        	openid:use
