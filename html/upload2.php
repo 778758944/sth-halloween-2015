@@ -10,8 +10,8 @@ $filename=dirname(__FILE__);
 chdir('/www/sgh');
 $imgname="aaa".".png";
 
-$img_path1="./html/images/".$imgname;
-$img_path2="/html/images/".$imgname;
+$img_path1='./html/images/aaa.txt';
+$img_path2='/html/images/'.$imgname;
 
 
 function convert_data($data){
@@ -20,16 +20,18 @@ function convert_data($data){
 }
 function save_to_file($image){
 
-	$fp=fopen($img_path1,"w");
-	fwrite($fp,$image);
+	$fp=fopen($img_path1,"r");
+	$return_data=fread($fp,$image);
 	fclose($fp);
+	$arr=array("url"=>$img_path2,"data"=>$return_data);
+	exit(json_decode($arr));
 }
 
-convert_data($data);
+// convert_data($data);
 
-$arr=array("url"=>$img_path2);
+// $arr=array("url"=>$img_path2);
 
-exit(json_encode($arr));
+// exit(json_encode($arr));
 
 
 ?>
