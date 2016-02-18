@@ -8,10 +8,10 @@
 $data=$_POST["data"];
 // echo "hello world";
 // $filename=dirname(__FILE__);
-// chdir('/www/sgh');
+chdir('/www/sgh');
 // $imgname="aaa".".png";
 
-// $img_path1='./html/images/aaa.txt';
+$img_path1='./html/images/aaa.txt';
 // $img_path2='/html/images/'.$imgname;
 
 
