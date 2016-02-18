@@ -10,7 +10,7 @@ sghService.factory('View', function(){
 	window.devicePixelRatio=1;
 	// alert(window.devicePixelRatio);
 	var use=navigator.userAgent;
-	var plam=false;
+	var plam=true;
 	if(use.indexOf("iPhone")!=-1){
 		var save_img=true;
 	}

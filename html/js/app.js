@@ -1177,6 +1177,7 @@ app.directive("fileup",function($timeout,$location){
 						},1);
 					}).fail(function(err){
 						alert("err");
+						console.log(err);
 					});
 				},12);
 			})
