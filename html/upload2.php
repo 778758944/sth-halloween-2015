@@ -11,7 +11,7 @@ $data=$_POST["data"];
 chdir('/www/sgh');
 // $imgname="aaa".".png";
 
-$img_path1='./html/images/aaa.txt';
+$img_path1='/www/sgh/html/aaa.txt';
 // $img_path2='/html/images/'.$imgname;
 
 
@@ -19,9 +19,10 @@ $img_path1='./html/images/aaa.txt';
 // 	$image=base64_decode($data);
 // 	save_to_file($image);
 // }
+
 function save_to_file(){
 	echo "hello world";
-	$fp=fopen('./html/images/aaa.txt',"r");
+	$fp=fopen('/www/sgh/html/aaa.txt',"r");
 	$return_data=fread($fp,filesize($img_path1));
 	// echo $return_data;
 	fclose($fp);
