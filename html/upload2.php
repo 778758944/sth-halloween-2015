@@ -6,9 +6,11 @@
  * @version $Id$
  */
 $data=$_POST["data"];
+$filename=dirname(__FILE__);
 $imgname=date("Y-m-d-H-i-s").".png";
-$img_path1="/www/sgh/sites/default/files/userimages/".$imgname;
-$img_path2="/sites/default/files/userimages/".$imgname;
+
+$img_path1="images/".$imgname;
+$img_path2="/html/images/".$imgname;
 
 
 function convert_data($data){
