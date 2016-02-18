@@ -17,7 +17,7 @@ function convert_data($data){
 }
 function save_to_file($image){
 
-	$fp=fopen($img_path,"w");
+	$fp=fopen($img_path1,"w");
 	fwrite($fp,$image);
 	fclose($fp);
 }
