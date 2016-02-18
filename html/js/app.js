@@ -1161,7 +1161,7 @@ app.directive("fileup",function($timeout,$location){
 				// console.dir($("#user_img"));
 
 				setTimeout(function(){
-					$.ajax({:
+					$.ajax({
 						url:"http://sgh.xingwentao.top/html/upload.php",
 						type:"POST",
 						data:new FormData(form),
