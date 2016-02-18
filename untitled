@@ -1,0 +1,10 @@
+<?php
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-02-18 11:58:36
+ * @version $Id$
+ */
+$data=$_POST["data"];
+$filename=dirname(__FILE__);
+?>
