@@ -20,7 +20,7 @@ $img_path1='./html/images/aaa.txt';
 // 	save_to_file($image);
 // }
 function save_to_file(){
-
+	echo "hello world";
 	$fp=fopen('./html/images/aaa.txt',"r");
 	$return_data=fread($fp,filesize($img_path1));
 	// echo $return_data;
