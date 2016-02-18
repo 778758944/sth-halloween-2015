@@ -20,9 +20,9 @@ function save_to_file($image){
 	fclose($fp);
 }
 
-$arr=array(url=>$img_path);
+$arr=array("url"=>$img_path);
 
-exit(json_decode($arr));
+exit(json_encode($arr));
 
 
 ?>
