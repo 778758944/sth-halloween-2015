@@ -48,7 +48,6 @@ $file=$_FILES['pic'];
 // print_r($_POST);
 // print_r($GLOBALS['HTTP_RAW_POST_DATA']);
 //echo $openid;
-exit($_FILES["pic"]["tmp_name"])
 $flag=move_uploaded_file($_FILES["pic"]["tmp_name"], "/www/sgh/sites/default/files/editimage/" .$openid.".png");
 if ($flag)
 {    
