@@ -6,7 +6,9 @@
  * @version $Id$
  */
 $data=$_POST["data"];
-$img_path="/www/sgh/sites/default/files/userimages".date("Y-m-d-H-i-s").".png";
+$imgname=date("Y-m-d-H-i-s").".png";
+$img_path1="/www/sgh/sites/default/files/userimages/".$imgname;
+$img_path2="/sites/default/files/userimages/".$imgname;
 
 
 function convert_data($data){
@@ -20,7 +22,7 @@ function save_to_file($image){
 	fclose($fp);
 }
 
-$arr=array("url"=>$img_path);
+$arr=array("url"=>$img_path2);
 
 exit(json_encode($arr));
 
