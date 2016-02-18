@@ -6,7 +6,7 @@
  * @version $Id$
  */
 $data=$_POST["data"];
-echo "hello world";
+// echo "hello world";
 // $filename=dirname(__FILE__);
 // chdir('/www/sgh');
 // $imgname="aaa".".png";
@@ -19,16 +19,18 @@ echo "hello world";
 // 	$image=base64_decode($data);
 // 	save_to_file($image);
 // }
-// function save_to_file($image){
+function save_to_file(){
 
-// 	$fp=fopen($img_path1,"r");
-// 	$return_data=fread($fp,filesize($img_path1));
-// 	// echo $return_data;
-// 	fclose($fp);
-// 	echo $return_data;
-// 	// $arr=array('data'=>$return_data);
-// 	// exit(json_decode($arr));
-// }
+	$fp=fopen($img_path1,"r");
+	$return_data=fread($fp,filesize($img_path1));
+	// echo $return_data;
+	fclose($fp);
+	echo $return_data;
+	// $arr=array('data'=>$return_data);
+	// exit(json_decode($arr));
+}
+save_to_file();
+
 
 // convert_data($data);
 
