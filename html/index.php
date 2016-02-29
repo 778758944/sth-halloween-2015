@@ -18,10 +18,8 @@ $openid=$_GET['openid'];
 <link href="css/animate.css" rel="stylesheet">
 <script>
 	var use="<?php echo $openid; ?>"||"o4cOIjiBKchlwnAAT5cjKVUkHNG8";
-	// alert(use);
 	window.devicePixelRatio=1;
-  alert(use);
-	//alert(use);
+
 </script>
 <script src="contribute/js/angular.js"></script>
 <script src="contribute/js/angular-route.js"></script> 
